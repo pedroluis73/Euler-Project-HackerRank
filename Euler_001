@@ -1,0 +1,39 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int t; 
+    scanf("%d",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        long int n; 
+        scanf("%ld",&n);
+        
+        n--;
+        
+        int i = 0;
+        long long int sum = 0;
+        
+        //Use the Principle of Inclusion Exclusion
+        
+        i = 3;
+        
+        sum += (i + (n/i)*3)*(n/i)/2;
+        
+        i = 5;
+        
+        sum += (i + (n/i)*5)*(n/i)/2;
+        
+        i = 15;
+        
+        sum -= (i + (n/i)*15)*(n/i)/2;
+        
+        printf("%lld\n", sum);
+        
+    }
+    return 0;
+}
