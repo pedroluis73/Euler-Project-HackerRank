@@ -1,0 +1,33 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int t; 
+    scanf("%d",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        long n; 
+        scanf("%ld",&n);
+        
+        long int fib1 = 1, fib2 = 2, fib = 3, sum = 2;
+
+        while(fib <= n){
+            fib1 = fib2;
+            
+            fib2 = fib;
+            
+            if(!(fib % 2))
+                sum += fib;
+            
+            fib += fib1;
+        }
+        
+        printf("%ld\n", sum);                
+        
+    }
+    return 0;
+}
